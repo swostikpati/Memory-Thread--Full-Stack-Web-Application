@@ -119,9 +119,9 @@ The database schemas are defined using Mongoose and are structured to represent 
 
 ## Site map
 
-(__TODO__: draw out a site map that shows how pages are related to each other)
+This is the hierarchial sitemap of my website.
 
-Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to.
+![Site Map](./documentation/wireframe-images/sitemap.png)
 
 ## User Stories
 
