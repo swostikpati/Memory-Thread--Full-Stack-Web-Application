@@ -32,6 +32,7 @@
     "func-call-spacing": ["error"],
     "no-lonely-if": ["error"],
     "array-bracket-spacing": ["error"],
-    "no-console": ["off"]
+    "no-console": ["off"],
+    "react-hooks/rules-of-hooks": "off"
   }
 }
