@@ -6,7 +6,8 @@
       "@components/*": ["./components/*"],
       "@app/*": ["./pages/*"],
       "@lib/*": ["./lib/*"],
-      "@models/*": ["./models/*"]
+      "@models/*": ["./models/*"],
+      "@api/*": ["./app/api/*"],
     }
   }
 }
