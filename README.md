@@ -1,5 +1,79 @@
 # Memory Threads
 
+## Updated Idea - Final Pitch
+
+## Overview
+
+"Memory Threads" is a streamlined and efficient app designed for personal reflection and memory curation. Each user creates a journal entry daily, embedding their thoughts, experiences, and any media links that highlight the day's significance. These entries are organized in a chronological timeline, offering a quick glance at the journey from today's musings back to past reflections. The app includes practical features like edit and archive options, empowering users to update recent entries or store away memories they prefer to keep private. It's a digital journal that emphasizes personal growth and the preservation of memories in a user-friendly and accessible manner.
+
+## Data Model
+
+### User
+Represents the individual users of the app, containing their authentication and personal profile information.
+- `ID`: Unique identifier for the user.
+- `Username`: The user's chosen username.
+- `Email`: Email address of the user.
+- `PasswordHash`: Hashed password for secure authentication.
+
+### JournalEntry
+Represents a single entry in the user's journal, documenting their daily experiences and thoughts.
+- `ID`: Unique identifier for the entry.
+- `UserID`: The ID of the user who created the entry.
+- `Title`: A brief title for the journal entry.
+- `Content`: The main content of the journal entry.
+- `SpecialLink`: An optional link to external content that highlighted the user's day.
+- `ImageURL`: An optional URL pointing to an image associated with the entry.
+- `DateCreated`: The date and time when the journal entry was created.
+- `LastUpdated`: The date and time when the journal entry was last updated.
+- `IsArchived`: A boolean flag indicating whether the entry is archived.
+
+
+## Database Schemas
+
+The database schemas are defined using Mongoose and are structured to represent users, their friendship groups, newsletters, responses, and memories. The schemas are defined in [`models`](./memory-threads-app/models/)  file.
+
+
+# User Stories for Memory Threads App
+
+- **Account Management**
+  - As a new user, I want to sign up with a username and password so that I can create a personal account.
+  - As a returning user, I want to log in with my username and password to access my entries.
+
+- **Journal Entry Creation**
+  - As a user, I want to create a new journal entry for each day to document my daily life.
+  - As a user, I want to add a photo to my journal entry to keep a visual memory of the day.
+  - As a user, I want to link external content, such as a song or an article, to my journal entry to remember what influenced me.
+
+- **Journal Entry Management**
+  - As a user, I want to view my journal entries in a timeline, sorted from newest to oldest, to easily navigate through my memories.
+  - As a user, I want to edit my journal entries within 24 hours of posting them to update or correct information.
+  - As a user, I want to archive journal entries that I prefer not to see in my timeline anymore but still want to keep.
+
+- **Journal Entry Retrieval**
+  - As a user, I want to search my entries by keywords so that I can find specific memories or topics quickly.
+
+## Research Topics
+
+This project will incorporate a range of modern development tools and practices to ensure a robust and maintainable codebase. The following is a list of research topics that have been explored, along with their assigned point values and the total points pursued for this project.
+
+* (6 points) **Next.js with React**
+  * Next.js is being utilized as the foundation of the front-end framework, leveraging its server-side rendering capabilities to improve performance and SEO.
+* (3 points) **User Authentication with NextAuth/Passport/Bcrypt**
+  * Integrating Passport for authentication middleware alongside Bcrypt for secure password hashing to facilitate robust user authentication measures.
+* (3 points) **Configuration Management with dotenv**
+  * Dotenv is used to manage environment variables, allowing the application to be configured without hard-coding sensitive data and making it easy to adapt to different environments (development, production, etc.).
+* (2 points) **ESLint Integration**
+  * ESLint has been integrated into the workflow to maintain code quality and consistency, with a configuration file included in the repository.
+  * This setup will automatically lint all JavaScript files on save, outside of `node_modules`. A screen capture showing the linting in action will be included.
+* (3 points) **Deployment Using Vercel**
+  * The application is deployed using Vercel, which provides seamless deployment of Next.js applications with features like preview deployments for each push.
+  * Links to the deployed application and the Vercel deployment configuration will be provided.
+
+The total points for the chosen research topics sum up to **17 points**, ensuring a comprehensive exploration of a wide range of development practices.
+
+
+## Previous Idea - Pitched in Milestone 1
+
 ## Overview
 
 "Memory Threads" is a charming and heartfelt app designed to keep the magic of friendship alive, one shared story at a time. Imagine a cozy digital nook where friends come together to weave a beautiful monthly newsletter, filled with laughter, stories, and pictures that paint the picture of their current lives. Each edition is like a warm hug from the past, capturing the essence of friendship in heartfelt responses to prompts like "What made you smile this month?" or snapshots that say "Wish you were here!"
