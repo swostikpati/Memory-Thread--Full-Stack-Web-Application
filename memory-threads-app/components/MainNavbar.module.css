@@ -12,20 +12,22 @@
 
 .header p {
   margin: 0;
-  font-size: 23px;
+  font-size: 26px;
 }
 
 .siteName {
   text-decoration: none;
-  color: #866051;
+  color: #b2775e;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
   transition: all 0.3s;
   margin-left: 10px;
+  font-weight: 400;
 }
 
-.siteName:hover {
-  color: #c47a5d;
+/* .siteName:hover {
+  color: #f48477;
   transform: scale(1.01);
-}
+} */
 
 .nav button {
   cursor: pointer;
@@ -41,7 +43,7 @@
 
 .loginBtn {
   color: white;
-  background-color: #cab5ac;
+  background-color: rgba(0, 0, 0, 0);
   border: 2px solid #f3f1ed;
 }
 
@@ -52,12 +54,13 @@
 }
 
 .loginBtn:hover {
-  transform: scale(1.1);
-  background-color: #866051bd;
+  transform: scale(1.02);
+  background-color: #f79489;
+  border: 0;
 }
 
 .regBtn:hover {
-  transform: scale(1.05);
-  background-color: #866051bd;
+  transform: scale(1.02);
+  background-color: #f79489;
   color: white;
 }

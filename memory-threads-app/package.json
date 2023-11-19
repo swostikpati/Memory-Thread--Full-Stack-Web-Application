@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.27.1",
     "eslint-plugin-mocha": "^10.2.0",
     "mocha": "^10.2.0",
     "mongoose": "^8.0.0",
