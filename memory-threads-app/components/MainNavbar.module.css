@@ -18,12 +18,12 @@
 .siteName {
   text-decoration: none;
   color: #866051;
-  transition: all 0.5s;
+  transition: all 0.3s;
   margin-left: 10px;
 }
 
 .siteName:hover {
-  color: rgb(118, 20, 175);
+  color: #c47a5d;
   transform: scale(1.01);
 }
 
