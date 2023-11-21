@@ -1,0 +1,28 @@
+.main {
+  min-height: 100vh;
+  background-color: #e0c5bd;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.header {
+  margin-top: 90px;
+  display: flex;
+  height: 50px;
+  width: 85%;
+  justify-content: space-evenly;
+}
+
+.displayMemories {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  flex-direction: column;
+}
+
+.displayMemories > div {
+  border: 1px black solid;
+  margin-top: 20px;
+}
