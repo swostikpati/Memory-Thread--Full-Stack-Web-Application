@@ -2,6 +2,12 @@
 
 Deployed App: https://memory-threads.vercel.app/home
 
+## Milestone 3 Updates
+
+- Added a wide array of user authentication features along with protected routes
+- Dedicated a lot of time to plan the theme and UI of the application and implemented the UI of the home page
+- Implemented the basic functionality of the journal entry creation page and this time retrieved the journal entries from the database and appended it live to the page
+
 ## Screenshots for Testing
 
 - [Form Submission Feedback](./documentation/form-submission-feedback.png)
@@ -17,14 +23,18 @@ Deployed App: https://memory-threads.vercel.app/home
 ## Data Model
 
 ### User
+
 Represents the individual users of the app, containing their authentication and personal profile information.
+
 - `ID`: Unique identifier for the user.
 - `Username`: The user's chosen username.
 - `Email`: Email address of the user.
 - `PasswordHash`: Hashed password for secure authentication.
 
 ### JournalEntry
+
 Represents a single entry in the user's journal, documenting their daily experiences and thoughts.
+
 - `ID`: Unique identifier for the entry.
 - `UserID`: The ID of the user who created the entry.
 - `Title`: A brief title for the journal entry.
@@ -35,24 +45,25 @@ Represents a single entry in the user's journal, documenting their daily experie
 - `LastUpdated`: The date and time when the journal entry was last updated.
 - `IsArchived`: A boolean flag indicating whether the entry is archived.
 
-
 ## Database Schemas
 
-The database schemas are defined using Mongoose and are structured to represent users, their friendship groups, newsletters, responses, and memories. The schemas are defined in [`models`](./memory-threads-app/models/)  file.
-
+The database schemas are defined using Mongoose and are structured to represent users, their friendship groups, newsletters, responses, and memories. The schemas are defined in [`models`](./memory-threads-app/models/) file.
 
 # User Stories for Memory Threads App
 
 - **Account Management**
+
   - As a new user, I want to sign up with a username and password so that I can create a personal account.
   - As a returning user, I want to log in with my username and password to access my entries.
 
 - **Journal Entry Creation**
+
   - As a user, I want to create a new journal entry for each day to document my daily life.
   - As a user, I want to add a photo to my journal entry to keep a visual memory of the day.
   - As a user, I want to link external content, such as a song or an article, to my journal entry to remember what influenced me.
 
 - **Journal Entry Management**
+
   - As a user, I want to view my journal entries in a timeline, sorted from newest to oldest, to easily navigate through my memories.
   - As a user, I want to edit my journal entries within 24 hours of posting them to update or correct information.
   - As a user, I want to archive journal entries that I prefer not to see in my timeline anymore but still want to keep.
@@ -64,21 +75,20 @@ The database schemas are defined using Mongoose and are structured to represent 
 
 This project will incorporate a range of modern development tools and practices to ensure a robust and maintainable codebase. The following is a list of research topics that have been explored, along with their assigned point values and the total points pursued for this project.
 
-* (6 points) **Next.js with React**
-  * Next.js is being utilized as the foundation of the front-end framework, leveraging its server-side rendering capabilities to improve performance and SEO.
-* (3 points) **User Authentication with NextAuth/Passport/Bcrypt**
-  * Integrating Passport for authentication middleware alongside Bcrypt for secure password hashing to facilitate robust user authentication measures.
-* (3 points) **Configuration Management with dotenv**
-  * Dotenv is used to manage environment variables, allowing the application to be configured without hard-coding sensitive data and making it easy to adapt to different environments (development, production, etc.).
-* (2 points) **ESLint Integration**
-  * ESLint has been integrated into the workflow to maintain code quality and consistency, with a configuration file included in the repository.
-  * This setup will automatically lint all JavaScript files on save, outside of `node_modules`. A screen capture showing the linting in action will be included.
-* (3 points) **Deployment Using Vercel**
-  * The application is deployed using Vercel, which provides seamless deployment of Next.js applications with features like preview deployments for each push.
-  * Links to the deployed application and the Vercel deployment configuration will be provided.
+- (6 points) **Next.js with React**
+  - Next.js is being utilized as the foundation of the front-end framework, leveraging its server-side rendering capabilities to improve performance and SEO.
+- (3 points) **User Authentication with NextAuth/Passport/Bcrypt**
+  - Integrating Passport for authentication middleware alongside Bcrypt for secure password hashing to facilitate robust user authentication measures.
+- (3 points) **Configuration Management with dotenv**
+  - Dotenv is used to manage environment variables, allowing the application to be configured without hard-coding sensitive data and making it easy to adapt to different environments (development, production, etc.).
+- (2 points) **ESLint Integration**
+  - ESLint has been integrated into the workflow to maintain code quality and consistency, with a configuration file included in the repository.
+  - This setup will automatically lint all JavaScript files on save, outside of `node_modules`. A screen capture showing the linting in action will be included.
+- (3 points) **Deployment Using Vercel**
+  - The application is deployed using Vercel, which provides seamless deployment of Next.js applications with features like preview deployments for each push.
+  - Links to the deployed application and the Vercel deployment configuration will be provided.
 
 The total points for the chosen research topics sum up to **17 points**, ensuring a comprehensive exploration of a wide range of development practices.
-
 
 ## Previous Idea - Pitched in Milestone 1
 
@@ -88,11 +98,9 @@ The total points for the chosen research topics sum up to **17 points**, ensurin
 
 With a sprinkle of nostalgia, the app also offers a delightful timeline feature – a memory lane where friends can stroll down and revisit the newsletters of yesteryears, reliving memories and smiles. "Memory Threads" isn’t just an app; it’s a shared diary, a collection of moments, and a treasure trove of the silly, the significant, and everything in between. It’s where distance doesn’t dim the warmth of friendship, and time spent apart only makes the shared stories sweeter.
 
-
 In a digital realm overflowing with fleeting likes and quick comments, "Memory Threads" offers a sanctuary for friends seeking a more profound connection. This app is a heartfelt answer to the shallow pools of social media, inviting friends to dive deeper than the occasional "hello" and the conversations that fade too quickly. It’s a dedicated space for those amazing, pure friendships that, though threatened by the drift of post-graduation life, are too precious to let slip away. "Memory Threads" nurtures these bonds by encouraging continuous, intimate sharing, allowing for a group's collective narrative to flourish even as new chapters unfold individually. It's where the essence of true friendship is not only preserved but celebrated and allowed to grow, undiminished by the miles or years that may separate us.
 
 This project is inspired from [**Letterloop.**](https://letterloop.co/)
-
 
 ## Data Model
 
@@ -137,11 +145,11 @@ Below are sample MongoDB document structures that illustrate how the data is org
   friendshipGroup: // a reference to a FriendshipGroup document,
   issueDate: // timestamp of newsletter creation,
   prompts: [
-    { 
+    {
       promptText: "What’s a recent challenge you overcame?",
       responses: // an array of references to Response documents
     },
-    { 
+    {
       promptText: "Share a picture from a place you visited this month!",
       responses: // an array of references to Response documents
     },
@@ -151,6 +159,7 @@ Below are sample MongoDB document structures that illustrate how the data is org
 ```
 
 ### Example Response Document
+
 ```JS
 {
   user: // a reference to a User document,
@@ -176,16 +185,15 @@ Below are sample MongoDB document structures that illustrate how the data is org
 
 ## Database Schemas
 
-The database schemas are defined using Mongoose and are structured to represent users, their friendship groups, newsletters, responses, and memories. The schemas are defined in the [`db.mjs`](./db.mjs)  file.
+The database schemas are defined using Mongoose and are structured to represent users, their friendship groups, newsletters, responses, and memories. The schemas are defined in the [`db.mjs`](./db.mjs) file.
 
 ## Wireframes
 
-/profile/create 
+/profile/create
 
 [HTML Wireframe](./documentation/html-wireframes/profile-creation.html)
 
 ![Image](./documentation/wireframe-images/profile-creation.png)
-
 
 /newsletter
 
@@ -227,33 +235,32 @@ This is the hierarchial sitemap of my website.
 3. **As a user**, I want the ability to 'react' to friends' stories or photos, so that I can engage with the content they share.
 4. **As a privacy-conscious user**, I want to control who sees my contributions, so that I can share sensitive updates confidently within my trusted circle.
 
-
 ## Research Topics
 
 This project will incorporate a range of modern development tools and practices to ensure a robust and maintainable codebase. The following is a list of research topics that have been explored, along with their assigned point values and the total points pursued for this project.
 
-* (6 points) **Next.js with React**
-  * Next.js is being utilized as the foundation of the front-end framework, leveraging its server-side rendering capabilities to improve performance and SEO.
-* (3 points) **User Authentication with Passport/Bcrypt**
-  * Integrating Passport for authentication middleware alongside Bcrypt for secure password hashing to facilitate robust user authentication measures.
-* (3 points) **Unit Testing with Mocha and Chai**
-  * Mocha, paired with Chai for assertions, is being used to write unit tests for the application's JavaScript logic, ensuring that code works correctly and helping to prevent future regressions.
-  * Test files and example tests will be linked, and a screen capture of the test results will be provided.
-* (3 points) **Configuration Management with dotenv**
-  * Dotenv is used to manage environment variables, allowing the application to be configured without hard-coding sensitive data and making it easy to adapt to different environments (development, production, etc.).
-* (2 points) **ESLint Integration**
-  * ESLint has been integrated into the workflow to maintain code quality and consistency, with a configuration file included in the repository.
-  * This setup will automatically lint all JavaScript files on save, outside of `node_modules`. A screen capture showing the linting in action will be included.
-* (2 points) **Tailwind CSS**
-  * Tailwind CSS is being employed as the CSS framework to style the application, taking advantage of its utility-first classes and responsive design features.
-  * The build process for Tailwind, along with the directory for the unprocessed source, will be linked, and a demonstration of its compilation on file changes will be shown.
-* (3 points) **Deployment Using Vercel**
-  * The application is deployed using Vercel, which provides seamless deployment of Next.js applications with features like preview deployments for each push.
-  * Links to the deployed application and the Vercel deployment configuration will be provided.
+- (6 points) **Next.js with React**
+  - Next.js is being utilized as the foundation of the front-end framework, leveraging its server-side rendering capabilities to improve performance and SEO.
+- (3 points) **User Authentication with Passport/Bcrypt**
+  - Integrating Passport for authentication middleware alongside Bcrypt for secure password hashing to facilitate robust user authentication measures.
+- (3 points) **Unit Testing with Mocha and Chai**
+  - Mocha, paired with Chai for assertions, is being used to write unit tests for the application's JavaScript logic, ensuring that code works correctly and helping to prevent future regressions.
+  - Test files and example tests will be linked, and a screen capture of the test results will be provided.
+- (3 points) **Configuration Management with dotenv**
+  - Dotenv is used to manage environment variables, allowing the application to be configured without hard-coding sensitive data and making it easy to adapt to different environments (development, production, etc.).
+- (2 points) **ESLint Integration**
+  - ESLint has been integrated into the workflow to maintain code quality and consistency, with a configuration file included in the repository.
+  - This setup will automatically lint all JavaScript files on save, outside of `node_modules`. A screen capture showing the linting in action will be included.
+- (2 points) **Tailwind CSS**
+  - Tailwind CSS is being employed as the CSS framework to style the application, taking advantage of its utility-first classes and responsive design features.
+  - The build process for Tailwind, along with the directory for the unprocessed source, will be linked, and a demonstration of its compilation on file changes will be shown.
+- (3 points) **Deployment Using Vercel**
+  - The application is deployed using Vercel, which provides seamless deployment of Next.js applications with features like preview deployments for each push.
+  - Links to the deployed application and the Vercel deployment configuration will be provided.
 
 The total points for the chosen research topics sum up to **19 points**, ensuring a comprehensive exploration of a wide range of development practices.
 
-### [Main Project File](app.mjs) 
+### [Main Project File](app.mjs)
 
 ## Annotations / References Used
 
