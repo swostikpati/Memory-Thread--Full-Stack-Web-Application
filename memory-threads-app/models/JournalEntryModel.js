@@ -11,6 +11,7 @@ const journalEntrySchema = new Schema({
   dateCreated: { type: Date, default: Date.now },
   lastUpdated: { type: Date, default: Date.now },
   isArchived: { type: Boolean, default: false },
+  userId: { type: String, required: true },
 });
 
 export default mongoose.models.JournalEntry ||
