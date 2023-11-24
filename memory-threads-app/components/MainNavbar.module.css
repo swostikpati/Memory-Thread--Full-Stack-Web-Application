@@ -2,7 +2,7 @@
   background-color: rgba(0, 0, 0, 0);
   padding: 15px;
   z-index: 1000;
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,7 +17,8 @@
 
 .siteName {
   text-decoration: none;
-  color: #b2775e;
+  /* color: #b2775e; */
+  color: #2a1a00;
   text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
   transition: all 0.3s;
   margin-left: 10px;
@@ -55,12 +56,13 @@
 
 .loginBtn:hover {
   transform: scale(1.02);
-  background-color: #f79489;
+  background-color: #f3f1ed;
+  color: #866051;
   border: 0;
 }
 
 .regBtn:hover {
   transform: scale(1.02);
-  background-color: #f79489;
-  color: white;
+  /* background-color: #f79489; */
+  /* color: white; */
 }

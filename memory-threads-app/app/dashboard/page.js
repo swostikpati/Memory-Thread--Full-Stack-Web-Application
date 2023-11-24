@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
+import MemoryComponent from "@/components/MemoryComponent";
 
 export default function Page() {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -58,8 +59,13 @@ export default function Page() {
   return (
     <main className={styles.main}>
       <header className={styles.header}>
-        <p>Timeline</p>
-        <button onClick={createMemoryButtonHandler}>Create Memory</button>
+        <p>Timeline of Moments</p>
+        <button
+          className={styles.createMemoryBtn}
+          onClick={createMemoryButtonHandler}
+        >
+          CREATE MEMORY
+        </button>
       </header>
       {showPopup && (
         <div className={styles.popup}>
@@ -68,7 +74,7 @@ export default function Page() {
           </button>
           <form onSubmit={addMemory}>
             <label>
-              Summarize today in a few words:
+              Summarize today in a few words (Heading):
               <input type="text" name="title" />
             </label>
             <label>
@@ -89,10 +95,7 @@ export default function Page() {
       )}
       <section className={styles.displayMemories}>
         {journalEntries.map((entry, index) => (
-          <div key={index}>
-            <p>{entry.title}</p>
-            <p>{entry.content}</p>
-          </div>
+          <MemoryComponent key={index} memory={entry} />
         ))}
       </section>
     </main>
