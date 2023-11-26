@@ -1,0 +1,17 @@
+.main {
+  height: auto;
+  width: 50%;
+  border: 1px black solid;
+  margin-top: 50px;
+  padding: 30px;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons > button {
+  margin-left: 20px;
+}
