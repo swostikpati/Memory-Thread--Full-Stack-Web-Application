@@ -20,7 +20,7 @@ function MemoryComponent({ memory, editHandler, deleteHandler }) {
         <p>{memory.title}</p>
         <div className={styles.buttons}>
           <button onClick={() => editHandler(memory)}>Edit</button>
-          <button onClick={deleteHandler}>Delete</button>
+          <button onClick={() => deleteHandler(memory._id)}>Delete</button>
         </div>
       </div>
 

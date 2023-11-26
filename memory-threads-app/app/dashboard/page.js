@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./page.module.css";
 import MemoryComponent from "@/components/MemoryComponent";
 
@@ -9,6 +9,8 @@ export default function Page() {
   const [isEditing, setIsEditing] = useState(false);
   const [currentMemory, setCurrentMemory] = useState(null);
   const [fetchTrigger, setFetchTrigger] = useState(false);
+  const [showDeletePopup, setShowDeletePopup] = useState(false);
+  const delMemoryId = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,7 +39,6 @@ export default function Page() {
     };
 
     try {
-      console.log(currentMemory._id);
       const response = isEditing
         ? await fetch(`/api/journalEntries/${currentMemory._id}`, {
             method: "PUT",
@@ -70,10 +71,22 @@ export default function Page() {
     setShowPopup(true);
   }
 
-  const deleteHandler = (memoryId) => {
+  function deleteHandler(memoryId) {
     // Delete logic (to be implemented)
     console.log("Delete memory", memoryId);
-  };
+    setShowDeletePopup(true);
+    delMemoryId.current = memoryId;
+  }
+
+  async function confirmDeleteHandler() {
+    //make a delete request to the server
+    const response = await fetch(`/api/journalEntries/${delMemoryId.current}`, {
+      method: "DELETE",
+    });
+    console.log(response);
+    setShowDeletePopup(false);
+    setFetchTrigger(!fetchTrigger);
+  }
 
   return (
     <main className={styles.main}>
@@ -125,6 +138,13 @@ export default function Page() {
             </label>
             <button type="submit">{isEditing ? "Update" : "Submit"}</button>
           </form>
+        </div>
+      )}
+      {showDeletePopup && (
+        <div className={styles.delPopup}>
+          <p>Are you sure you want to delete this memory?</p>
+          <button onClick={confirmDeleteHandler}>Yes</button>
+          <button onClick={() => setShowDeletePopup(false)}>No</button>
         </div>
       )}
       <section className={styles.displayMemories}>
