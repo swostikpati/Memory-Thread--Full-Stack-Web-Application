@@ -1,6 +1,6 @@
 # Memory Threads
 
-Deployed App: https://memory-threads.vercel.app/home
+Deployed App: https://memory-threads.vercel.app/
 
 ## Milestone 3 Updates
 

@@ -92,6 +92,10 @@ export default function Page() {
   // Function to update the selected date
   const handleDateChange = (event) => {
     // Convert the selected date to the beginning of the day in UTC
+    if (event.target.value === "") {
+      setSelectedDate("");
+      return;
+    }
     const userDate = new Date(event.target.value);
     userDate.setMinutes(userDate.getMinutes() + userDate.getTimezoneOffset());
     setSelectedDate(userDate.toISOString().split("T")[0]);
@@ -175,7 +179,11 @@ export default function Page() {
         </div>
       )}
       {/* Date Selector */}
+      {/* <div>
+        <button onClick={() => setSelectedDate("")}>Clear</button>
+      </div> */}
       <input type="date" value={selectedDate} onChange={handleDateChange} />
+
       <section className={styles.displayMemories}>
         {filteredEntries.map((entry, index) => (
           <MemoryComponent
