@@ -10,6 +10,7 @@ export default function Page() {
   const [currentMemory, setCurrentMemory] = useState(null);
   const [fetchTrigger, setFetchTrigger] = useState(false);
   const [showDeletePopup, setShowDeletePopup] = useState(false);
+  const [selectedDate, setSelectedDate] = useState("");
   const delMemoryId = useRef(null);
 
   useEffect(() => {
@@ -88,6 +89,32 @@ export default function Page() {
     setFetchTrigger(!fetchTrigger);
   }
 
+  // Function to update the selected date
+  const handleDateChange = (event) => {
+    // Convert the selected date to the beginning of the day in UTC
+    const userDate = new Date(event.target.value);
+    userDate.setMinutes(userDate.getMinutes() + userDate.getTimezoneOffset());
+    setSelectedDate(userDate.toISOString().split("T")[0]);
+  };
+
+  const formatDate = (dateString) => {
+    // Convert and format the date in UTC
+    const date = new Date(dateString);
+    return new Date(date.getTime() - date.getTimezoneOffset() * 60000)
+      .toISOString()
+      .split("T")[0];
+  };
+
+  // Apply the date filter to journalEntries
+  const filteredEntries = journalEntries.filter((entry) => {
+    // If no date is selected, return all entries
+    if (selectedDate === "") {
+      return true;
+    }
+    // Else, return entries that match the selected date
+    return formatDate(entry.dateCreated) === selectedDate;
+  });
+
   return (
     <main className={styles.main}>
       <header className={styles.header}>
@@ -147,8 +174,10 @@ export default function Page() {
           <button onClick={() => setShowDeletePopup(false)}>No</button>
         </div>
       )}
+      {/* Date Selector */}
+      <input type="date" value={selectedDate} onChange={handleDateChange} />
       <section className={styles.displayMemories}>
-        {journalEntries.map((entry, index) => (
+        {filteredEntries.map((entry, index) => (
           <MemoryComponent
             key={index}
             memory={entry}
