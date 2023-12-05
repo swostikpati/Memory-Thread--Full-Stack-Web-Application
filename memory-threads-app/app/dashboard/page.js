@@ -150,44 +150,48 @@ export default function Page() {
         </button>
       </header>
       {showPopup && (
-        <div className={styles.popup}>
-          <button onClick={togglePopup} className={styles.closeButton}>
-            X
-          </button>
-          <form onSubmit={handleFormSubmit}>
-            <label>
-              Summarize today in a few words (Heading):
-              <input
-                type="text"
-                name="title"
-                defaultValue={isEditing ? currentMemory.title : ""}
-              />
-            </label>
-            <label>
-              What memory do you want to preserve from today?
-              <textarea
-                name="content"
-                defaultValue={isEditing ? currentMemory.content : ""}
-              />
-            </label>
-            <label>
-              Share a special piece of media from today:
-              <input
-                type="text"
-                name="specialLink"
-                defaultValue={isEditing ? currentMemory.specialLink : ""}
-              />
-            </label>
-            <label>
-              Attach a photo you want to remember (URL for now):
-              <input
-                type="text"
-                name="image"
-                defaultValue={isEditing ? currentMemory.image : ""}
-              />
-            </label>
-            <button type="submit">{isEditing ? "Update" : "Submit"}</button>
-          </form>
+        <div className={styles.popupOverlay}>
+          <div className={styles.popup}>
+            <button onClick={togglePopup} className={styles.closeButton}>
+              X
+            </button>
+            <form onSubmit={handleFormSubmit} className={styles.addEditForm}>
+              <label className={styles.title}>
+                Summarize today in a few words (Heading):
+                <input
+                  type="text"
+                  name="title"
+                  defaultValue={isEditing ? currentMemory.title : ""}
+                />
+              </label>
+              <label className={styles.content}>
+                What memory do you want to preserve from today?
+                <textarea
+                  name="content"
+                  defaultValue={isEditing ? currentMemory.content : ""}
+                />
+              </label>
+              <label className={styles.link}>
+                Share a special piece of media from today:
+                <input
+                  type="text"
+                  name="specialLink"
+                  defaultValue={isEditing ? currentMemory.specialLink : ""}
+                />
+              </label>
+              <label className={styles.photo}>
+                Attach a photo you want to remember (URL for now):
+                <input
+                  type="text"
+                  name="image"
+                  defaultValue={isEditing ? currentMemory.image : ""}
+                />
+              </label>
+              <button type="submit" className={styles.formSubmitBt}>
+                {isEditing ? "Update" : "Submit"}
+              </button>
+            </form>
+          </div>
         </div>
       )}
       {showDeletePopup && (

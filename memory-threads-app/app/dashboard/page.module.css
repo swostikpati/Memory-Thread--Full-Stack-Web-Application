@@ -73,6 +73,37 @@
 }
 
 .dateLabel {
-  width: 45%;
+  width: 48%;
   margin-top: 20px;
+}
+
+/* Overlay Form*/
+.popupOverlay {
+  position: fixed; /* Fixed position to cover the whole screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Blur effect for the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Ensures it's above other content */
+}
+
+/* Popup Card */
+.popup {
+  background-color: #fff; /* White background for the card */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  z-index: 20; /* Above the overlay background */
+}
+
+/* Form Styles */
+.addEditForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spacing between form items */
 }
