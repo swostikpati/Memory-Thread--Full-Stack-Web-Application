@@ -114,6 +114,7 @@
   justify-content: space-between;
   flex: 1;
   margin: 20px;
+  gap: 13px;
 }
 
 /* Input Styles */
@@ -157,12 +158,44 @@
 
 .delPopup {
   background-color: #fff; /* White background for the card */
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
   z-index: 20; /* Above the overlay background */
+  height: auto;
+  width: 30%;
 }
 
+.delPopup > p {
+  font-size: 20px;
+  margin: 0;
+  color: #2a1a00;
+  text-align: center;
+}
+
+.delPopup > div {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.delPopup button {
+  padding: 10px 20px; /* More padding for better button size */
+  border: none;
+  border-radius: 5px; /* Rounded corners for buttons */
+  cursor: pointer; /* Indicates that the buttons are clickable */
+  background-color: rgb(201, 201, 201);
+  transition: background-color 0.3s ease;
+}
+
+.delYesBt:hover {
+  background-color: #fc7f7f;
+}
+
+.delNoBt:hover {
+  background-color: #5ac067ea;
+}
 .formSubmitBt {
   cursor: pointer;
   border-radius: 8px; /* More rounded corners */

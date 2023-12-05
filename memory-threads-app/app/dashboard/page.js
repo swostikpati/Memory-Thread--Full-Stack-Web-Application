@@ -208,8 +208,20 @@ export default function Page() {
         <div className={styles.popupOverlay}>
           <div className={styles.delPopup}>
             <p>Are you sure you want to delete this memory?</p>
-            <button onClick={confirmDeleteHandler}>Yes</button>
-            <button onClick={() => setShowDeletePopup(false)}>No</button>
+            <div>
+              <button
+                onClick={confirmDeleteHandler}
+                className={styles.delYesBt}
+              >
+                Yes
+              </button>
+              <button
+                onClick={() => setShowDeletePopup(false)}
+                className={styles.delNoBt}
+              >
+                No
+              </button>
+            </div>
           </div>
         </div>
       )}
