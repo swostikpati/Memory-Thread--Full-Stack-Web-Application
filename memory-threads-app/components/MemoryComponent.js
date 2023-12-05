@@ -23,9 +23,9 @@ function MemoryComponent({ memory, editHandler, deleteHandler }) {
         </div>
       </div>
 
-      <p>{memory.content}</p>
+      <p className={styles.content}>{memory.content}</p>
 
-      {memory.image ? (
+      {memory.specialLink ? (
         <div className={styles.specialLinkDiv}>
           <a
             href={memory.specialLink}
@@ -33,7 +33,7 @@ function MemoryComponent({ memory, editHandler, deleteHandler }) {
             target="_blank"
             rel="noreferrer noopener"
           >
-            Today&apos;s Highlight
+            Today&apos;s Highlight :)
           </a>
         </div>
       ) : null}
