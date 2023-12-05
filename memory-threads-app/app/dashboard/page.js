@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./page.module.css";
 import MemoryComponent from "@/components/MemoryComponent";
+import { useUser } from "@clerk/nextjs";
 
 export default function Page() {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -12,6 +13,24 @@ export default function Page() {
   const [showDeletePopup, setShowDeletePopup] = useState(false);
   const [selectedDate, setSelectedDate] = useState("");
   const delMemoryId = useRef(null);
+  const { user, isLoaded, isSignedIn } = useUser();
+
+  useEffect(() => {
+    if (isLoaded && isSignedIn && user) {
+      // Send the user data to the server
+      const createUser = async () => {
+        const response = await fetch("/api/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        });
+        console.log(response);
+      };
+      createUser();
+    }
+  }, [isLoaded, user, isSignedIn]);
 
   useEffect(() => {
     const fetchData = async () => {
