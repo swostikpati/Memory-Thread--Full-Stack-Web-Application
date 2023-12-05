@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import styles from "./page.module.css";
 import MemoryComponent from "@/components/MemoryComponent";
 import { useUser } from "@clerk/nextjs";
+import Footer from "@/components/Footer";
 
 export default function Page() {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -239,15 +240,26 @@ export default function Page() {
       </label>
 
       <section className={styles.displayMemories}>
-        {filteredEntries.map((entry, index) => (
-          <MemoryComponent
-            key={index}
-            memory={entry}
-            editHandler={editHandler}
-            deleteHandler={deleteHandler}
-          />
-        ))}
+        {filteredEntries.length === 0 ? (
+          journalEntries.length === 0 ? (
+            <p className={styles.noMemories}>Add your First Memory :)</p>
+          ) : (
+            <p className={styles.noMemories}>
+              No Memories Found For This Day :(
+            </p>
+          )
+        ) : (
+          filteredEntries.map((entry, index) => (
+            <MemoryComponent
+              key={index}
+              memory={entry}
+              editHandler={editHandler}
+              deleteHandler={deleteHandler}
+            />
+          ))
+        )}
       </section>
+      <Footer />
     </main>
   );
 }

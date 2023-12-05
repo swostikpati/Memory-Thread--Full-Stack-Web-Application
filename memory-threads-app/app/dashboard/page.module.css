@@ -29,6 +29,7 @@
   align-items: center;
   width: 80%;
   flex-direction: column;
+  min-height: 55vh;
 }
 
 .createMemoryBtn {
@@ -213,4 +214,9 @@
   border: 0;
   color: #fff; /* Brighter text color for contrast */
   background-color: #be7dff; /* Softer background color */
+}
+
+.noMemories {
+  font-size: 30px;
+  font-weight: 400;
 }

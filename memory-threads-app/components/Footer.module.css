@@ -1,0 +1,8 @@
+.footer {
+  margin-top: 50px;
+  width: 100%;
+  padding: 2px;
+  text-align: center;
+  border-top: 1px dashed #000000;
+  font-size: 17px;
+}
