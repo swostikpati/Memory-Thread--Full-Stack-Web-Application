@@ -2,6 +2,15 @@
 
 Deployed App: https://memory-threads.vercel.app/
 
+## Milestone 4 Updates
+
+- Added editing and deletion of the journal entries - AJAX
+- Added styling to all the pages using CSS modules
+- Added a second schema to store User Data
+- Added the mechanism to filter journal entries by date
+- Added second HOF to handle the filtering
+- Increased stability and security by adding mongo-sanitize (protected routes were already implemented)
+
 ## Milestone 3 Updates
 
 - Added a wide array of user authentication features along with protected routes
@@ -77,7 +86,7 @@ This project will incorporate a range of modern development tools and practices 
 
 - (6 points) **Next.js with React**
   - Next.js is being utilized as the foundation of the front-end framework, leveraging its server-side rendering capabilities to improve performance and SEO.
-- (3 points) **User Authentication with NextAuth/Passport/Bcrypt**
+- (3 points) **User Authentication with Clerk**
   - Integrating Passport for authentication middleware alongside Bcrypt for secure password hashing to facilitate robust user authentication measures.
 - (3 points) **Configuration Management with dotenv**
   - Dotenv is used to manage environment variables, allowing the application to be configured without hard-coding sensitive data and making it easy to adapt to different environments (development, production, etc.).
