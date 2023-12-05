@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./MemoryComponent.module.css";
 function MemoryComponent({ memory, editHandler, deleteHandler }) {
   function formatDate(dateString) {
@@ -25,11 +24,24 @@ function MemoryComponent({ memory, editHandler, deleteHandler }) {
       </div>
 
       <p>{memory.content}</p>
-      <p>A piece of media from today: {memory.specialLink}</p>
+
       {memory.image ? (
-        <Image
-          width={500}
-          height={500}
+        <div className={styles.specialLinkDiv}>
+          <a
+            href={memory.specialLink}
+            className={styles.specialLink}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Today&apos;s Highlight
+          </a>
+        </div>
+      ) : null}
+
+      {memory.image ? (
+        <img
+          width={350}
+          height={350}
           position="relative"
           src={memory.image}
           alt="Image"

@@ -99,11 +99,85 @@
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
   z-index: 20; /* Above the overlay background */
+  height: 70%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Form Styles */
 .addEditForm {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Spacing between form items */
+  justify-content: space-between;
+  flex: 1;
+  margin: 20px;
+}
+
+/* Input Styles */
+.addEditForm input[type="text"],
+.addEditForm textarea {
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.formHeader {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.formHeader > p {
+  font-size: 25px;
+  margin: 0;
+  color: #2a1a00;
+}
+
+.closeButton {
+  height: 30px;
+  width: 30px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.content > textarea {
+  /* remove change from height and width */
+  /* add this */
+  resize: vertical;
+  font-family: "Inter", sans-serif;
+}
+
+.delPopup {
+  background-color: #fff; /* White background for the card */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  z-index: 20; /* Above the overlay background */
+}
+
+.formSubmitBt {
+  cursor: pointer;
+  border-radius: 8px; /* More rounded corners */
+  font-family: "Inter", sans-serif;
+  font-weight: 600; /* Bolder text */
+  padding: 12px 20px; /* Adjust padding */
+  transition: all 0.4s ease; /* Smoother transition */
+  height: auto;
+
+  border: 2px solid #be7dff;
+  background-color: white;
+}
+
+.formSubmitBt:hover {
+  border: 0;
+  color: #fff; /* Brighter text color for contrast */
+  background-color: #be7dff; /* Softer background color */
 }

@@ -152,27 +152,35 @@ export default function Page() {
       {showPopup && (
         <div className={styles.popupOverlay}>
           <div className={styles.popup}>
-            <button onClick={togglePopup} className={styles.closeButton}>
-              X
-            </button>
+            <div className={styles.formHeader}>
+              <p>Capture a Moment</p>
+              <img
+                src="cross1.png"
+                onClick={togglePopup}
+                className={styles.closeButton}
+              ></img>
+            </div>
+
             <form onSubmit={handleFormSubmit} className={styles.addEditForm}>
               <label className={styles.title}>
-                Summarize today in a few words (Heading):
+                <em>Caption This Day: (Heading):</em>
                 <input
                   type="text"
                   name="title"
+                  required
                   defaultValue={isEditing ? currentMemory.title : ""}
                 />
               </label>
               <label className={styles.content}>
-                What memory do you want to preserve from today?
+                <em>Chronicle Your Unforgettable Moment:</em>
                 <textarea
                   name="content"
+                  required
                   defaultValue={isEditing ? currentMemory.content : ""}
                 />
               </label>
               <label className={styles.link}>
-                Share a special piece of media from today:
+                <em>Post Today&apos;s Highlight (Music/Movie/Show/Book):</em>
                 <input
                   type="text"
                   name="specialLink"
@@ -180,25 +188,29 @@ export default function Page() {
                 />
               </label>
               <label className={styles.photo}>
-                Attach a photo you want to remember (URL for now):
+                <em>Upload a Photo to Treasure (URL):</em>
                 <input
                   type="text"
                   name="image"
                   defaultValue={isEditing ? currentMemory.image : ""}
                 />
               </label>
-              <button type="submit" className={styles.formSubmitBt}>
-                {isEditing ? "Update" : "Submit"}
-              </button>
+              <div>
+                <button type="submit" className={styles.formSubmitBt}>
+                  {isEditing ? "Update" : "Submit"}
+                </button>
+              </div>
             </form>
           </div>
         </div>
       )}
       {showDeletePopup && (
-        <div className={styles.delPopup}>
-          <p>Are you sure you want to delete this memory?</p>
-          <button onClick={confirmDeleteHandler}>Yes</button>
-          <button onClick={() => setShowDeletePopup(false)}>No</button>
+        <div className={styles.popupOverlay}>
+          <div className={styles.delPopup}>
+            <p>Are you sure you want to delete this memory?</p>
+            <button onClick={confirmDeleteHandler}>Yes</button>
+            <button onClick={() => setShowDeletePopup(false)}>No</button>
+          </div>
         </div>
       )}
       {/* Date Selector */}
