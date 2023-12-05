@@ -1,17 +1,35 @@
 .main {
   height: auto;
   width: 50%;
-  border: 1px black solid;
+  border: 1px solid #e0e0e0; /* Lighter border color */
   margin-top: 50px;
-  padding: 30px;
+  padding: 20px;
+  background-color: #fff; /* White background for the card */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
+  transition: 0.3s;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.main:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px; /* Add space between header and content */
 }
 
 .buttons > button {
   margin-left: 20px;
+  padding: 10px 20px; /* More padding for better button size */
+  border: none;
+  border-radius: 5px; /* Rounded corners for buttons */
+  cursor: pointer; /* Indicates that the buttons are clickable */
+  transition: background-color 0.3s ease;
+}
+
+.buttons > button:hover {
+  background-color: gray; /* Slight background color change on hover */
 }

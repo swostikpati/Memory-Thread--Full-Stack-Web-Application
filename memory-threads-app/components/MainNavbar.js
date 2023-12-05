@@ -7,14 +7,20 @@ const MainNavbar = () => {
   const { user, isLoaded } = useUser();
   const router = useRouter();
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${
+        isLoaded && user ? styles.loggedInColor : ""
+      }`}
+    >
       <a href="/" className={styles.siteName}>
         <p>Memory Threads</p>
       </a>
 
       <nav className={styles.nav}>
         {isLoaded && user ? (
-          <UserButton afterSignOutUrl="/" />
+          <div className={styles.userButton}>
+            <UserButton afterSignOutUrl="/" />
+          </div>
         ) : (
           <>
             <button

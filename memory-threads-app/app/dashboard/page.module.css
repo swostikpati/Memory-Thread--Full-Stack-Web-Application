@@ -1,6 +1,6 @@
 .main {
   min-height: 100vh;
-  background-color: #e0c5bd;
+  background-color: #fad7cd;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -48,4 +48,31 @@
 .createMemoryBtn:hover {
   transform: translateY(-1px); /* Slight upward movement */
   transform: scale(1.03);
+}
+
+.dateInput {
+  font-size: 16px; /* Adequate font size for readability */
+  padding: 10px; /* Enough padding to make the input easy to interact with */
+  border: 1px solid #e0e0e0; /* Light border color for subtlety */
+  border-radius: 5px; /* Rounded corners for a softer look */
+  background-color: #fff; /* White background */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+  outline: none; /* Removes the default focus outline */
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.dateInput:focus {
+  border-color: #a3a3a3; /* Changes the border color on focus for visibility */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Enhances the shadow on focus */
+}
+
+/* This is to style the placeholder text, if needed */
+.dateInput::placeholder {
+  color: #a9a9a9; /* Placeholder text color */
+  font-style: italic; /* Optional: italic style for placeholder */
+}
+
+.dateLabel {
+  width: 45%;
+  margin-top: 20px;
 }

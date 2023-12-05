@@ -201,7 +201,14 @@ export default function Page() {
       {/* <div>
         <button onClick={() => setSelectedDate("")}>Clear</button>
       </div> */}
-      <input type="date" value={selectedDate} onChange={handleDateChange} />
+      <label htmlFor="dateInput" className={styles.dateLabel}>
+        <input
+          type="date"
+          value={selectedDate}
+          onChange={handleDateChange}
+          className={styles.dateInput}
+        />
+      </label>
 
       <section className={styles.displayMemories}>
         {filteredEntries.map((entry, index) => (
